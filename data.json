@@ -1,0 +1,284 @@
+{
+  "brand": {
+    "name": "Youthinity",
+    "shortName": "Youthinity.",
+    "tagline": "Turn Campus Curiosity Into Career Capital",
+    "subheading": "India's premier student community and upskilling ecosystem. Master high-income skills through cohort-based apprenticeships, land guaranteed corporate internships, and connect with 50,000+ ambitious peers across 350+ top colleges.",
+    "email": "admissions@youthinity.in",
+    "supportWhatsApp": "+91 98765 43210",
+    "headquarters": "New Delhi, India",
+    "communityStats": {
+      "liveActiveNow": "5,280+",
+      "totalGraduates": "12,400+",
+      "rating": "4.9/5"
+    }
+  },
+  "metrics": [
+    {
+      "id": "students",
+      "target": 50000,
+      "suffix": "+",
+      "label": "Active Student Members in Pan-India Network",
+      "icon": "users"
+    },
+    {
+      "id": "colleges",
+      "target": 350,
+      "suffix": "+",
+      "label": "Colleges & University Chapters Represented",
+      "icon": "graduation-cap"
+    },
+    {
+      "id": "placements",
+      "target": 1450,
+      "suffix": "+",
+      "label": "Verified Internships & Placements Landed",
+      "icon": "check-circle"
+    },
+    {
+      "id": "highest_ctc",
+      "target": 18.4,
+      "prefix": "₹",
+      "suffix": " LPA",
+      "label": "Highest Fresher CTC Secured by Alumni",
+      "icon": "badge-dollar-sign"
+    }
+  ],
+  "hiringPartners": [
+    { "name": "Deloitte", "icon": "building-2", "category": "Consulting & Big 4" },
+    { "name": "Ernst & Young (EY)", "icon": "briefcase", "category": "Audit & Financial Advisory" },
+    { "name": "Zomato", "icon": "utensils", "category": "Product & Growth" },
+    { "name": "Swiggy", "icon": "bike", "category": "Tech & Operations" },
+    { "name": "Razorpay", "icon": "credit-card", "category": "Fintech & Engineering" },
+    { "name": "D.E. Shaw & Co.", "icon": "trending-up", "category": "Quantitative Investment" },
+    { "name": "Meesho", "icon": "shopping-bag", "category": "E-Commerce & Scale" },
+    { "name": "Schbang Digital", "icon": "palette", "category": "Creative & Advertising" },
+    { "name": "Paytm", "icon": "wallet", "category": "Fintech Ecosystem" }
+  ],
+  "pppcFramework": [
+    {
+      "number": "01",
+      "pillar": "Professional Upskilling",
+      "summary": "In-demand industry hard skills across AI engineering, financial valuation, performance marketing, and product design taught via live client briefs.",
+      "deliverables": [
+        "Production Capstone Projects",
+        "Tool Stack Mastery (Figma, Python, SQL)",
+        "1-on-1 Code & Pitch Deck Reviews"
+      ]
+    },
+    {
+      "number": "02",
+      "pillar": "Personal Growth",
+      "summary": "Mental models, deep work habits, discipline tracking, and high-agency mindset development to overcome campus procrastination.",
+      "deliverables": [
+        "Daily Accountability Squads",
+        "Goal Setting & Execution Systems",
+        "Peer Co-Working Sessions"
+      ]
+    },
+    {
+      "number": "03",
+      "pillar": "Personality & Presence",
+      "summary": "Public speaking, spontaneous articulation, case interview debriefs, and LinkedIn personal branding to command authority in any room.",
+      "deliverables": [
+        "Live Group Discussion (GD) Drills",
+        "Spontaneous Speech Gym",
+        "Corporate Etiquette Mastery"
+      ]
+    },
+    {
+      "number": "04",
+      "pillar": "Career & Placements",
+      "summary": "Exclusive internship matchmaking, off-campus referral pipelines, recruiter mock interviews, and ATS-beating resume audits.",
+      "deliverables": [
+        "Direct Corporate Partner Pipeline",
+        "Verified Certificate of Apprenticeship",
+        "1-on-1 Mock Interviews with HR Leaders"
+      ]
+    }
+  ],
+  "cohorts": [
+    {
+      "id": "tech-ai",
+      "category": "tech",
+      "badge": "TECH & AI",
+      "badgeColor": "cyan",
+      "title": "Full-Stack AI Engineering & Systems",
+      "tagline": "Build scalable applications integrated with Gemini API, React, Node.js, and autonomous AI agents.",
+      "duration": "10 Weeks",
+      "startDate": "Nov 24, 2026",
+      "urgency": "Only 3 seats left",
+      "curriculum": [
+        "Next.js 15, TypeScript & Tailwind CSS Architecture",
+        "Production Vector DBs, RAG & LLM Pipelines",
+        "2 Production-grade Live Client Capstones"
+      ],
+      "mentor": "Arnav Goel (AI Architect, Google Dev Expert)"
+    },
+    {
+      "id": "ui-ux",
+      "category": "design",
+      "badge": "PRODUCT DESIGN",
+      "badgeColor": "pink",
+      "title": "UI/UX Design & Design Systems Mastery",
+      "tagline": "Master end-to-end UX research, wireframing, high-fidelity Figma components, auto-layout, and micro-animations.",
+      "duration": "8 Weeks",
+      "startDate": "Dec 01, 2026",
+      "urgency": "Cohort 14 filling",
+      "curriculum": [
+        "User Journeys, Heuristic Audits & Research Synthesis",
+        "Tokenized Multi-platform Design Systems in Figma",
+        "Case Study Portfolio Deck Ready for Hiring"
+      ],
+      "mentor": "Sameer Kapoor (Staff Product Designer, Swiggy)"
+    },
+    {
+      "id": "finance",
+      "category": "finance",
+      "badge": "FINANCE & IB",
+      "badgeColor": "amber",
+      "title": "Financial Modeling & Corporate Valuation",
+      "tagline": "Step into investment banking, equity research, and financial analyst roles with 3-statement models, DCF, and LBO analysis.",
+      "duration": "8 Weeks",
+      "startDate": "Nov 28, 2026",
+      "urgency": "High Demand",
+      "curriculum": [
+        "Advanced Financial Modeling & Dynamic Formulae in Excel",
+        "DCF, Comparable Company Analysis & LBO Frameworks",
+        "Real M&A Pitch Decks Evaluated by Investment Bankers"
+      ],
+      "mentor": "Kavita Singhal (Ex-Morgan Stanley, VP Investment Banking)"
+    },
+    {
+      "id": "marketing",
+      "category": "marketing",
+      "badge": "GROWTH & BRAND",
+      "badgeColor": "orange",
+      "title": "Performance Marketing & Brand Growth",
+      "tagline": "Manage real ad budgets across Meta & Google, master organic viral content funnels, retention loops, and analytics.",
+      "duration": "6 Weeks",
+      "startDate": "Dec 05, 2026",
+      "urgency": "Cohort 19 Open",
+      "curriculum": [
+        "Live Meta Ads Manager with Real Campaign Spends",
+        "Conversion Rate Optimization (CRO) & Funnel Audits",
+        "Guaranteed Agency Internship Audition"
+      ],
+      "mentor": "Tanmay Joshi (Growth Lead, Schbang alumni)"
+    },
+    {
+      "id": "leadership",
+      "category": "leadership",
+      "badge": "LEADERSHIP",
+      "badgeColor": "emerald",
+      "title": "Executive Communication & Case Competitions",
+      "tagline": "Conquer stage fear, structure impromptu arguments, crack national business case competitions, and interview like a seasoned leader.",
+      "duration": "6 Weeks",
+      "startDate": "Nov 26, 2026",
+      "urgency": "Signature Track",
+      "curriculum": [
+        "Weekly Live Stage Simulation & Instant Video Feedback",
+        "Harvard Business School Case Study Solving Frameworks",
+        "1-on-1 Executive Pitch Coaching & Salary Negotiation"
+      ],
+      "mentor": "Riddhima Sen (Management Consultant, Ex-BCG)"
+    },
+    {
+      "id": "data-sql",
+      "category": "tech",
+      "badge": "DATA & SQL",
+      "badgeColor": "cyan",
+      "title": "Business Data Analytics & PowerBI",
+      "tagline": "Extract actionable business intelligence from complex databases. Master SQL queries, Python Pandas, and executive dashboards.",
+      "duration": "8 Weeks",
+      "startDate": "Dec 08, 2026",
+      "urgency": "Cohort 11 Open",
+      "curriculum": [
+        "Advanced PostgreSQL, Window Functions & CTEs",
+        "Interactive PowerBI Executive Storytelling",
+        "Live E-Commerce Analytics Pipeline Project"
+      ],
+      "mentor": "Varun Agarwal (Senior Data Scientist, Razorpay)"
+    }
+  ],
+  "masterclasses": [
+    {
+      "id": "mc-design",
+      "dayTime": "Saturday, 7:00 PM IST",
+      "title": "Cracking Product Design Interviews in 2026",
+      "description": "Live teardown of winning Figma portfolio decks, whiteboard design challenge strategies, and salary negotiation.",
+      "speaker": "Sameer Kapoor",
+      "role": "Staff Designer @ Swiggy",
+      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&h=80&fit=crop&crop=face"
+    },
+    {
+      "id": "mc-finance",
+      "dayTime": "Sunday, 5:00 PM IST",
+      "title": "Financial Modeling Teardown: Real M&A Deal",
+      "description": "Watch a live DCF valuation model built from scratch on Excel using real financial statements of a unicorn startup.",
+      "speaker": "Kavita Singhal",
+      "role": "VP, Investment Banking @ Morgan Stanley alumni",
+      "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=80&h=80&fit=crop&crop=face"
+    },
+    {
+      "id": "mc-ai",
+      "dayTime": "Wednesday, 8:00 PM IST",
+      "title": "Build & Deploy Autonomous AI Agents",
+      "description": "Step-by-step live coding session on integrating LLMs, function calling, and full-stack web UI for college projects.",
+      "speaker": "Arnav Goel",
+      "role": "AI Architect @ Google Developer Expert",
+      "avatar": "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=80&h=80&fit=crop&crop=face"
+    }
+  ],
+  "testimonials": [
+    {
+      "studentName": "Ananya Sharma",
+      "college": "SRCC, Delhi University",
+      "outcome": "Placed at Deloitte as Financial Analyst",
+      "company": "Deloitte",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
+      "rating": 5,
+      "quote": "In college, my professors taught economics theory from 1990 textbooks. Youthinity's Financial Modeling cohort taught me real DCF and 3-statement models. I cleared Deloitte's valuation rounds seamlessly."
+    },
+    {
+      "studentName": "Rohan Verma",
+      "college": "IIT Delhi",
+      "outcome": "SDE Intern at Razorpay",
+      "company": "Razorpay",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+      "rating": 5,
+      "quote": "I had zero coding confidence despite being a 3rd year engineering student. The Full-Stack AI track pushed me to build 3 real web apps and use modern APIs. Landed my SDE internship with Razorpay!"
+    },
+    {
+      "studentName": "Priya Nair",
+      "college": "Christ University, Bangalore",
+      "outcome": "Lead Campus Ambassador 2025",
+      "company": "Christ Chapter Lead",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+      "rating": 5,
+      "quote": "Being a Campus Ambassador taught me team leadership, negotiation, and campus marketing. It gave me talking points in every MBA interview. Best decision of my college journey."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can 1st year and 2nd year college students join the cohorts?",
+      "answer": "Yes! In fact, over 65% of our learners join during their 1st or 2nd year. Starting early allows you to build a standout portfolio of capstone projects, gain confidence in group discussions, and secure competitive summer internships before your final placement year."
+    },
+    {
+      "question": "How do the guaranteed internship and referral drives work?",
+      "answer": "Students who maintain 80%+ attendance and successfully submit their capstone projects become eligible for Youthinity's internal placement drives. We partner directly with 500+ corporate hiring managers, startups, and marketing agencies across India who interview our certified cohort graduates."
+    },
+    {
+      "question": "What are the live class timings? Will it clash with college exams?",
+      "answer": "All cohort live sessions are scheduled on weekday evenings (after 7:00 PM IST) or weekend afternoons. Furthermore, during peak university exam months (such as semester end exams), cohorts offer exam pauses and permanent access to all HD recordings and mentor notes."
+    },
+    {
+      "question": "Do I receive verified certificates upon completion?",
+      "answer": "Yes. Every graduate receives an official, verifiable Certificate of Apprenticeship with a unique credential ID and QR code, directly verifiable on LinkedIn and by corporate background screening partners."
+    },
+    {
+      "question": "What is the difference between free masterclasses and flagship cohorts?",
+      "answer": "Free masterclasses are 90-minute standalone webinars offering broad perspective on industry topics. Flagship cohorts are intensive 6-to-12 week structured programs with 1-on-1 mentorship, live assignment reviews, capstone projects, placement support, and peer pods."
+    }
+  ]
+}

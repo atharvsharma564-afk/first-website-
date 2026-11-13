@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youthinity — India's Premier Student Community & Upskilling Platform</title>
+  <meta name="description" content="Turn campus curiosity into career capital. Cohort-based upskilling, guaranteed internships, and a 50,000+ student network across 350+ colleges.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              orange: '#FF5E3A',
+              amber: '#FFAA00',
+              cyan: '#00E5FF',
+              dark: '#080B11',
+              card: '#0F1420',
+              cardHover: '#141B2D',
+              border: 'rgba(255, 255, 255, 0.08)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Custom Craft Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#080B11] text-slate-100 min-h-screen selection:bg-orange-500 selection:text-white">
+
+  <!-- ==================== 1. HEADER & NAVIGATION ==================== -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-white/10 transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="Youthinity Home">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-orange-600 via-orange-500 to-amber-400 p-[1px] shadow-lg shadow-orange-500/20">
+          <div class="w-full h-full bg-[#080B11] rounded-[11px] flex items-center justify-center group-hover:bg-[#0F1420] transition-colors">
+            <i data-lucide="sparkles" class="w-5 h-5 text-orange-400"></i>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
+            Youthinity<span class="text-orange-500">.</span>
+          </span>
+          <span class="text-[10px] uppercase font-mono tracking-widest text-slate-400">Student Ecosystem</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#cohorts" class="hover:text-white transition-colors">Cohorts</a>
+        <a href="#pppc-framework" class="hover:text-white transition-colors">PPPC Engine</a>
+        <a href="#calculator" class="hover:text-white transition-colors">Career Calculator</a>
+        <a href="#ambassadors" class="hover:text-white transition-colors">Campus Ambassadors</a>
+        <a href="#testimonials" class="hover:text-white transition-colors">Wall of Proof</a>
+        <a href="#faqs" class="hover:text-white transition-colors">FAQs</a>
+      </nav>
+
+      <!-- Desktop Action Buttons -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#masterclasses" class="text-xs uppercase font-mono tracking-wider px-3.5 py-2 rounded-lg border border-white/10 text-slate-300 hover:text-white hover:border-white/20 transition-all flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Free Masterclasses
+        </a>
+        <button class="trigger-apply-modal text-sm font-semibold px-5 py-2.5 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white shadow-lg shadow-orange-500/25 transition-all transform active:scale-95 flex items-center gap-2" data-course-name="Youthinity Student Membership">
+          <span>Join Community</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2.5 text-slate-300 hover:text-white rounded-lg hover:bg-white/5 focus:outline-none" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Slide-over Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 top-20 bg-[#080B11]/95 backdrop-blur-2xl z-40 border-b border-white/10 p-6 flex flex-col justify-between" aria-hidden="true">
+      <div class="flex flex-col gap-6 text-lg font-medium text-slate-200">
+        <a href="#cohorts" class="hover:text-orange-400 transition-colors py-2 border-b border-white/5">Flagship Cohorts</a>
+        <a href="#pppc-framework" class="hover:text-orange-400 transition-colors py-2 border-b border-white/5">PPPC Learning Framework</a>
+        <a href="#calculator" class="hover:text-orange-400 transition-colors py-2 border-b border-white/5">Career & Salary Calculator</a>
+        <a href="#ambassadors" class="hover:text-orange-400 transition-colors py-2 border-b border-white/5">Campus Ambassador Program</a>
+        <a href="#testimonials" class="hover:text-orange-400 transition-colors py-2 border-b border-white/5">Student Success Stories</a>
+        <a href="#faqs" class="hover:text-orange-400 transition-colors py-2 border-b border-white/5">Frequently Asked Questions</a>
+      </div>
+      <div class="flex flex-col gap-3 pt-6">
+        <button class="trigger-apply-modal w-full py-3.5 rounded-xl bg-orange-500 text-white font-semibold flex items-center justify-center gap-2" data-course-name="Youthinity Mobile Community Join">
+          Join 50,000+ Students
+        </button>
+        <button id="mobile-menu-close" class="w-full py-2.5 text-slate-400 hover:text-white text-sm text-center">Close Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 2. HERO SECTION ==================== -->
+  <section class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden" aria-label="Hero Introduction">
+    
+    <!-- 3D WebGL Canvas Layer -->
+    <div id="hero-canvas-container" aria-hidden="true"></div>
+
+    <!-- Hero Content Frame -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="max-w-2xl lg:max-w-xl">
+        
+        <!-- Live Community Status Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-emerald-500/30 text-xs font-mono text-emerald-400 mb-6 backdrop-blur-md">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span>5,280+ Students Live in Community Right Now</span>
+        </div>
+
+        <!-- Hero Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
+          Turn Campus Curiosity Into <span class="text-gradient-orange">Career Capital.</span>
+        </h1>
+
+        <!-- Hero Subtitle -->
+        <p class="text-base sm:text-lg text-slate-300 font-normal leading-relaxed mb-8">
+          India's premier student upskilling ecosystem. Master high-income skills through cohort-based apprenticeships, land guaranteed corporate internships, and connect with <strong>50,000+</strong> ambitious peers across 350+ top colleges.
+        </p>
+
+        <!-- CTA Action Group -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
+          <a href="#cohorts" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold text-center shadow-lg shadow-orange-500/25 transition-all transform active:scale-95 flex items-center justify-center gap-2">
+            <span>Explore Cohorts</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#calculator" class="px-7 py-3.5 rounded-xl glass-panel glass-panel-hover text-slate-200 font-semibold text-center transition-all flex items-center justify-center gap-2">
+            <i data-lucide="calculator" class="w-4 h-4 text-orange-400"></i>
+            <span>Calculate Career ROI</span>
+          </a>
+        </div>
+
+        <!-- Trust Ratings & Social Proof Pill -->
+        <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+          <div class="flex -space-x-2.5 overflow-hidden">
+            <img class="inline-block h-9 w-9 rounded-full ring-2 ring-[#080B11]" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face" alt="Student">
+            <img class="inline-block h-9 w-9 rounded-full ring-2 ring-[#080B11]" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Student">
+            <img class="inline-block h-9 w-9 rounded-full ring-2 ring-[#080B11]" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Student">
+            <img class="inline-block h-9 w-9 rounded-full ring-2 ring-[#080B11]" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" alt="Student">
+          </div>
+          <div>
+            <div class="flex items-center gap-1 text-amber-400">
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+              <span class="text-xs font-bold text-white ml-1">4.9/5</span>
+            </div>
+            <p class="text-xs text-slate-400">From 12,400+ graduates across SRCC, IITs, Christ & NMIMS</p>
+          </div>
+        </div>
+
+        <!-- 3D Canvas HUD Info Label -->
+        <div id="hero-node-hud" class="mt-8 inline-block px-4 py-2 rounded-lg bg-black/60 border border-white/10 text-xs font-mono text-slate-300 opacity-0 transition-opacity duration-300 backdrop-blur-md">
+          Hover over 3D constellation nodes to explore career orbits
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 3. CORPORATE HIRING PARTNERS MARQUEE ==================== -->
+  <section class="py-12 border-y border-white/5 bg-[#0A0E17]" aria-label="Hiring Partners">
+    <div class="max-w-7xl mx-auto px-4 mb-6 text-center">
+      <p class="text-xs uppercase font-mono tracking-widest text-slate-400">
+        Our Students & Alumni Work At Leading Global Brands & Top Startups
+      </p>
+    </div>
+    
+    <div class="marquee-container">
+      <div class="marquee-content">
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="building-2" class="w-5 h-5 text-orange-400"></i> Deloitte</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="briefcase" class="w-5 h-5 text-orange-400"></i> Ernst & Young (EY)</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="utensils" class="w-5 h-5 text-orange-400"></i> Zomato</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="bike" class="w-5 h-5 text-orange-400"></i> Swiggy</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="credit-card" class="w-5 h-5 text-orange-400"></i> Razorpay</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="trending-up" class="w-5 h-5 text-orange-400"></i> D.E. Shaw & Co.</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="shopping-bag" class="w-5 h-5 text-orange-400"></i> Meesho</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="palette" class="w-5 h-5 text-orange-400"></i> Schbang Digital</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="wallet" class="w-5 h-5 text-orange-400"></i> Paytm</span>
+      </div>
+      <!-- Duplicate for seamless infinite loop -->
+      <div class="marquee-content" aria-hidden="true">
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="building-2" class="w-5 h-5 text-orange-400"></i> Deloitte</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="briefcase" class="w-5 h-5 text-orange-400"></i> Ernst & Young (EY)</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="utensils" class="w-5 h-5 text-orange-400"></i> Zomato</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="bike" class="w-5 h-5 text-orange-400"></i> Swiggy</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="credit-card" class="w-5 h-5 text-orange-400"></i> Razorpay</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="trending-up" class="w-5 h-5 text-orange-400"></i> D.E. Shaw & Co.</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="shopping-bag" class="w-5 h-5 text-orange-400"></i> Meesho</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="palette" class="w-5 h-5 text-orange-400"></i> Schbang Digital</span>
+        <span class="text-slate-300 font-bold text-lg tracking-wider flex items-center gap-2"><i data-lucide="wallet" class="w-5 h-5 text-orange-400"></i> Paytm</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. VERIFIED IMPACT METRICS ==================== -->
+  <section id="impact-metrics" class="py-20 relative" aria-label="Youthinity Impact Metrics">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-400 mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white font-mono metric-counter" data-target="50000" data-suffix="+">50,000+</p>
+          <p class="text-sm text-slate-400 mt-2">Active Student Members in Pan-India Network</p>
+        </div>
+
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+          </div>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white font-mono metric-counter" data-target="350" data-suffix="+">350+</p>
+          <p class="text-sm text-slate-400 mt-2">Colleges & University Chapters Represented</p>
+        </div>
+
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="check-circle" class="w-6 h-6"></i>
+          </div>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white font-mono metric-counter" data-target="1450" data-suffix="+">1,450+</p>
+          <p class="text-sm text-slate-400 mt-2">Verified Internships & Placements Landed</p>
+        </div>
+
+        <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 relative overflow-hidden group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
+            <i data-lucide="badge-dollar-sign" class="w-6 h-6"></i>
+          </div>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white font-mono metric-counter" data-target="18.4" data-prefix="₹" data-suffix=" LPA">₹18.4 LPA</p>
+          <p class="text-sm text-slate-400 mt-2">Highest Fresher CTC Secured by Alumni</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. PPPC FRAMEWORK (LEARNING ENGINE) ==================== -->
+  <section id="pppc-framework" class="py-24 bg-[#0A0E17]/60 border-t border-white/5 relative" aria-label="The PPPC Framework">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 font-mono text-xs uppercase tracking-wider mb-4">
+          The Younity Learning Engine
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          The 4 Pillars of the <span class="text-gradient-orange">PPPC Strategy</span>
+        </h2>
+        <p class="text-slate-300 mt-4 text-base sm:text-lg">
+          College degrees teach theory. Youthinity develops the 4 holistic dimensions that recruiters actually evaluate when hiring student leaders.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Pillar 1 -->
+        <div class="glass-panel p-7 rounded-2xl border border-white/5 hover:border-orange-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-orange-400 tracking-wider">PILLAR 01</span>
+            <h3 class="text-xl font-bold text-white mt-2 mb-3">Professional Upskilling</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              In-demand industry hard skills across AI engineering, financial valuation, performance marketing, and product design taught via live client briefs.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-400 space-y-2 border-t border-white/5 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-orange-400"></i> Production Capstone Projects</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-orange-400"></i> Tool Stack Mastery (Figma, Python)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-orange-400"></i> 1-on-1 Code & Deck Reviews</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="glass-panel p-7 rounded-2xl border border-white/5 hover:border-cyan-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-cyan-400 tracking-wider">PILLAR 02</span>
+            <h3 class="text-xl font-bold text-white mt-2 mb-3">Personal Growth</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              Mental models, deep work habits, discipline tracking, and high-agency mindset development to overcome campus procrastination.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-400 space-y-2 border-t border-white/5 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Daily Accountability Squads</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Goal Setting & Execution Systems</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> Peer Co-Working Sessions</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="glass-panel p-7 rounded-2xl border border-white/5 hover:border-amber-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-amber-400 tracking-wider">PILLAR 03</span>
+            <h3 class="text-xl font-bold text-white mt-2 mb-3">Personality & Presence</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              Public speaking, spontaneous articulation, case interview debriefs, and LinkedIn personal branding to command authority in any room.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-400 space-y-2 border-t border-white/5 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Live Group Discussion (GD) Drills</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Spontaneous Speech Gym</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Corporate Etiquette Mastery</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="glass-panel p-7 rounded-2xl border border-white/5 hover:border-emerald-500/40 transition-all flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono font-bold text-emerald-400 tracking-wider">PILLAR 04</span>
+            <h3 class="text-xl font-bold text-white mt-2 mb-3">Career & Placements</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              Exclusive internship matchmaking, off-campus referral pipelines, recruiter mock interviews, and ATS-beating resume audits.
+            </p>
+          </div>
+          <ul class="text-xs text-slate-400 space-y-2 border-t border-white/5 pt-4">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Direct Corporate Partner Pipeline</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Verified Certificate of Apprenticeship</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> 1-on-1 Mock Interviews with HRs</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. FLAGSHIP COHORTS & UPSKILLING TRACKS ==================== -->
+  <section id="cohorts" class="py-24 relative" aria-label="Flagship Student Cohorts">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-mono font-bold text-orange-400 tracking-widest uppercase">Live Apprentice Tracks</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+            Cohorts Designed for <span class="text-gradient-orange">Real Employment.</span>
+          </h2>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2">
+          <button class="cohort-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-orange-500 text-white border border-orange-500 transition-all" data-filter="all">All Tracks</button>
+          <button class="cohort-filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 border border-white/10 hover:border-white/20 transition-all" data-filter="tech">Tech & AI</button>
+          <button class="cohort-filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 border border-white/10 hover:border-white/20 transition-all" data-filter="design">UI/UX Design</button>
+          <button class="cohort-filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 border border-white/10 hover:border-white/20 transition-all" data-filter="finance">Finance</button>
+          <button class="cohort-filter-btn px-4 py-2 rounded-lg text-xs font-semibold text-slate-400 border border-white/10 hover:border-white/20 transition-all" data-filter="marketing">Marketing</button>
+        </div>
+      </div>
+
+      <!-- Cohorts Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Track 1: Tech & AI -->
+        <div class="cohort-card glass-panel rounded-2xl border border-white/10 p-6 flex flex-col justify-between glass-panel-hover" data-category="tech">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">TECH & AI</span>
+              <span class="text-xs text-rose-400 font-mono font-medium flex items-center gap-1"><i data-lucide="flame" class="w-3.5 h-3.5"></i> Only 3 seats left</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Full-Stack AI Engineering & Systems</h3>
+            <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+              Build modern scalable web applications integrated with Gemini API, React, Node.js, and autonomous AI agents.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Next.js 15, TypeScript & Tailwind CSS</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Production Vector DBs & LLM Pipelines</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> 2 Full Live Client Capstones</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-[11px] text-slate-400 font-mono block">Duration & Starts</span>
+              <span class="text-sm font-semibold text-white">10 Weeks • Nov 24</span>
+            </div>
+            <button class="trigger-apply-modal px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-xs font-semibold transition-all" data-course-name="Full-Stack AI Engineering">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Track 2: Product Design (UI/UX) -->
+        <div class="cohort-card glass-panel rounded-2xl border border-white/10 p-6 flex flex-col justify-between glass-panel-hover" data-category="design">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-pink-500/10 text-pink-400 border border-pink-500/20">PRODUCT DESIGN</span>
+              <span class="text-xs text-slate-400 font-mono">Cohort 14</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">UI/UX Design & Design Systems Mastery</h3>
+            <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+              Master end-to-end UX research, wireframing, high-fidelity Figma components, auto-layout, and interactive micro-animations.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> User Journeys & Qualitative Audits</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Tokenized Design Systems in Figma</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Portfolio Deck ready for Behance</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-[11px] text-slate-400 font-mono block">Duration & Starts</span>
+              <span class="text-sm font-semibold text-white">8 Weeks • Dec 01</span>
+            </div>
+            <button class="trigger-apply-modal px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-xs font-semibold transition-all" data-course-name="UI/UX Product Design">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Track 3: Finance & Valuation -->
+        <div class="cohort-card glass-panel rounded-2xl border border-white/10 p-6 flex flex-col justify-between glass-panel-hover" data-category="finance">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">FINANCE & IB</span>
+              <span class="text-xs text-rose-400 font-mono font-medium flex items-center gap-1"><i data-lucide="flame" class="w-3.5 h-3.5"></i> High Demand</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Financial Modeling & Corporate Valuation</h3>
+            <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+              Step into investment banking, equity research, and financial analyst roles with 3-statement models, DCF, and LBO analysis.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Advanced Excel & Financial Modeling</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> DCF, Comps & Real M&A Case Studies</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Mentors from Deloitte & EY</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-[11px] text-slate-400 font-mono block">Duration & Starts</span>
+              <span class="text-sm font-semibold text-white">8 Weeks • Nov 28</span>
+            </div>
+            <button class="trigger-apply-modal px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-xs font-semibold transition-all" data-course-name="Financial Modeling & Valuation">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Track 4: Marketing & Growth -->
+        <div class="cohort-card glass-panel rounded-2xl border border-white/10 p-6 flex flex-col justify-between glass-panel-hover" data-category="marketing">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-orange-500/10 text-orange-400 border border-orange-500/20">GROWTH & BRAND</span>
+              <span class="text-xs text-slate-400 font-mono">Cohort 19</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Performance Marketing & Brand Growth</h3>
+            <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+              Manage real ad budgets across Meta & Google, master organic viral content funnels, retention loops, and analytics.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Live Meta Ads Manager with Real Spends</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Conversion Rate Optimization (CRO)</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Guaranteed Agency Internship Audition</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-[11px] text-slate-400 font-mono block">Duration & Starts</span>
+              <span class="text-sm font-semibold text-white">6 Weeks • Dec 05</span>
+            </div>
+            <button class="trigger-apply-modal px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-xs font-semibold transition-all" data-course-name="Performance Marketing">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Track 5: Leadership & Speaking -->
+        <div class="cohort-card glass-panel rounded-2xl border border-white/10 p-6 flex flex-col justify-between glass-panel-hover" data-category="leadership">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">LEADERSHIP</span>
+              <span class="text-xs text-slate-400 font-mono">Signature</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Executive Communication & Case Competitions</h3>
+            <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+              Conquer stage fear, structure impromptu arguments, crack national business case competitions, and interview like a seasoned executive.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Weekly Stage Simulation & Feedback</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> HBS Case Study Solving Frameworks</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> 1-on-1 Executive Pitch Coaching</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-[11px] text-slate-400 font-mono block">Duration & Starts</span>
+              <span class="text-sm font-semibold text-white">6 Weeks • Nov 26</span>
+            </div>
+            <button class="trigger-apply-modal px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-xs font-semibold transition-all" data-course-name="Executive Communication & Case Prep">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Track 6: Data Analytics & SQL -->
+        <div class="cohort-card glass-panel rounded-2xl border border-white/10 p-6 flex flex-col justify-between glass-panel-hover" data-category="tech">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">DATA & SQL</span>
+              <span class="text-xs text-slate-400 font-mono">Cohort 11</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">Business Data Analytics & PowerBI</h3>
+            <p class="text-sm text-slate-300 mb-5 leading-relaxed">
+              Extract business intelligence from complex databases. Master SQL queries, Python Pandas, and executive PowerBI dashboards.
+            </p>
+            <ul class="text-xs text-slate-400 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Advanced PostgreSQL & Joins</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Interactive PowerBI Storytelling</li>
+              <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Live E-Commerce Data Pipeline</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <span class="text-[11px] text-slate-400 font-mono block">Duration & Starts</span>
+              <span class="text-sm font-semibold text-white">8 Weeks • Dec 08</span>
+            </div>
+            <button class="trigger-apply-modal px-4 py-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white text-xs font-semibold transition-all" data-course-name="Business Data Analytics">
+              Apply Now
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 7. INTERACTIVE CAREER & SALARY CALCULATOR ==================== -->
+  <section id="calculator" class="py-24 bg-[#0A0E17]/80 border-t border-white/5 relative" aria-label="Career Calculator">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest">Interactive Pathway</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+          Calculate Your Career & Placement Trajectory
+        </h2>
+        <p class="text-slate-300 mt-3 text-sm sm:text-base">
+          Select your college standing and domain interest to preview expected placement packages and hiring partners.
+        </p>
+      </div>
+
+      <div class="glass-panel rounded-3xl border border-white/10 p-6 sm:p-10 shadow-2xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          
+          <div>
+            <label for="calc-year" class="block text-xs font-mono text-slate-400 mb-2 uppercase">1. Your College Year</label>
+            <select id="calc-year" class="w-full bg-[#080B11] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors">
+              <option value="1">1st Year Undergraduate</option>
+              <option value="2" selected>2nd Year Undergraduate</option>
+              <option value="3">3rd Year Undergraduate</option>
+              <option value="4">Final Year / Recent Graduate</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="calc-track" class="block text-xs font-mono text-slate-400 mb-2 uppercase">2. Target Domain</label>
+            <select id="calc-track" class="w-full bg-[#080B11] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors">
+              <option value="tech" selected>Tech & AI Systems</option>
+              <option value="design">UI/UX & Product Design</option>
+              <option value="finance">Finance & Investment Banking</option>
+              <option value="marketing">Performance Marketing & Growth</option>
+              <option value="speaking">Public Speaking & Consulting</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="calc-goal" class="block text-xs font-mono text-slate-400 mb-2 uppercase">3. Primary Objective</label>
+            <select id="calc-goal" class="w-full bg-[#080B11] border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors">
+              <option value="internship" selected>Summer Internship (Stipend)</option>
+              <option value="placement">Full-time Campus Placement</option>
+              <option value="freelance">High-ticket Freelancing / Agency</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Results Display Box -->
+        <div class="p-6 rounded-2xl bg-[#080B11]/90 border border-orange-500/30 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div>
+            <span class="text-xs text-slate-400 font-mono block mb-1">Expected Starting CTC</span>
+            <span id="calc-result-lpa" class="text-2xl font-bold font-mono text-emerald-400">₹8.5 - ₹18.0 LPA</span>
+          </div>
+
+          <div>
+            <span class="text-xs text-slate-400 font-mono block mb-1">Apprenticeship Duration</span>
+            <span id="calc-result-duration" class="text-base font-semibold text-white">12 Weeks (Part-time)</span>
+          </div>
+
+          <div>
+            <span class="text-xs text-slate-400 font-mono block mb-1">Typical Hiring Partners</span>
+            <span id="calc-result-hiring" class="text-base font-semibold text-slate-200">Razorpay, Zomato, Swiggy</span>
+          </div>
+
+          <div class="flex items-center">
+            <button class="trigger-apply-modal w-full py-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold text-xs tracking-wide transition-all shadow-md shadow-orange-500/20" data-course-name="Targeted Career Pathway">
+              Unlock This Pathway
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-4 text-center">
+          <p class="text-xs text-slate-400">
+            Recommended Track: <strong id="calc-result-recommended" class="text-orange-400 font-semibold">Full-Stack AI Engineering & System Design</strong>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8. CAMPUS AMBASSADOR PROGRAM (CAP) ==================== -->
+  <section id="ambassadors" class="py-24 relative" aria-label="Campus Ambassador Program">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5">
+          <span class="text-xs font-mono font-bold text-orange-400 tracking-widest uppercase">Student Leadership</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 leading-tight">
+            Become the Face of Youthinity on <span class="text-gradient-orange">Your Campus.</span>
+          </h2>
+          <p class="text-slate-300 mt-4 text-base leading-relaxed">
+            The Youthinity Campus Ambassador Program (CAP 2026) is a premier 6-month leadership fellowship. Lead events, build collegiate networks, and gain firsthand exposure to marketing and business operations.
+          </p>
+
+          <div class="mt-8 space-y-4">
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-400 flex-shrink-0 mt-0.5">
+                <i data-lucide="award" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Monthly Stipend & Incentive Pool</h4>
+                <p class="text-xs text-slate-400">Earn monthly performance rewards, course vouchers, and official sponsorship for your college societies.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center text-cyan-400 flex-shrink-0 mt-0.5">
+                <i data-lucide="file-check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Letter of Recommendation & LinkedIn Endorsement</h4>
+                <p class="text-xs text-slate-400">Official certificate and verified LOR from Youthinity leadership, boosting your MBA and job applications.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400 flex-shrink-0 mt-0.5">
+                <i data-lucide="crown" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">VIP Access to National Youth Summits</h4>
+                <p class="text-xs text-slate-400">All-access passes to Youthinity's offline summits in Delhi, Mumbai, and Bengaluru.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <button class="trigger-apply-modal px-6 py-3.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm transition-all shadow-lg shadow-orange-500/20" data-course-name="Campus Ambassador Fellowship 2026">
+              Apply for Campus Ambassador 2026
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Visual Graphic Box -->
+        <div class="lg:col-span-7">
+          <div class="glass-panel rounded-3xl border border-white/10 p-8 relative overflow-hidden">
+            <div class="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
+              <div>
+                <span class="text-xs font-mono text-slate-400 uppercase">CAP Cohort Timeline</span>
+                <h3 class="text-lg font-bold text-white">The 4-Step Selection Process</h3>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Applications Open</span>
+            </div>
+
+            <div class="space-y-6">
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 rounded-full bg-orange-500 text-white font-mono text-xs flex items-center justify-center font-bold flex-shrink-0">1</div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Online Application & Profile Review</h4>
+                  <p class="text-xs text-slate-300 mt-1">Submit your college details, society involvements, and tell us why you want to lead your campus chapter.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 border border-white/10 font-mono text-xs flex items-center justify-center font-bold flex-shrink-0">2</div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Micro-Task Challenge (30 Mins)</h4>
+                  <p class="text-xs text-slate-300 mt-1">Demonstrate basic communication and outreach flair with a mini-case challenge designed for college students.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 border border-white/10 font-mono text-xs flex items-center justify-center font-bold flex-shrink-0">3</div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Interactive 1-on-1 Video Interview</h4>
+                  <p class="text-xs text-slate-300 mt-1">A friendly 15-minute conversation with a senior Youthinity Community Lead to gauge enthusiasm and cultural fit.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 items-start">
+                <div class="w-8 h-8 rounded-full bg-slate-800 text-slate-300 border border-white/10 font-mono text-xs flex items-center justify-center font-bold flex-shrink-0">4</div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Welcome Kit, Official Onboarding & Fellowship Kickoff</h4>
+                  <p class="text-xs text-slate-300 mt-1">Receive your official badge, merchandise kit, society budget allocations, and begin leading!</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 9. STUDENT WALL OF PROOF (TESTIMONIALS) ==================== -->
+  <section id="testimonials" class="py-24 bg-[#0A0E17]/60 border-t border-white/5 relative" aria-label="Student Testimonials">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest">Real Results</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+          From College Lecture Halls to <span class="text-gradient-orange">Dream Corporate Offers.</span>
+        </h2>
+        <p class="text-slate-300 mt-3 text-sm sm:text-base">
+          Read unfiltered stories from students who broke into top tier careers through Youthinity cohorts.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Story 1 -->
+        <div class="glass-panel p-7 rounded-2xl border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-sm text-slate-200 leading-relaxed italic mb-6">
+              "In college, my professors taught economics theory from 1990 textbooks. Youthinity's Financial Modeling cohort taught me real DCF and 3-statement models. I cleared Deloitte's valuation rounds seamlessly."
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 pt-4 border-t border-white/10">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face" class="w-11 h-11 rounded-full object-cover border border-white/20" alt="Ananya">
+            <div>
+              <h4 class="text-sm font-bold text-white">Ananya Sharma</h4>
+              <p class="text-xs text-slate-400">SRCC, Delhi University • Placed at <strong class="text-orange-400 font-semibold">Deloitte</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 2 -->
+        <div class="glass-panel p-7 rounded-2xl border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-sm text-slate-200 leading-relaxed italic mb-6">
+              "I had zero coding confidence despite being a 3rd year engineering student. The Full-Stack AI track pushed me to build 3 real web apps and use modern APIs. Landed my SDE internship with Razorpay!"
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 pt-4 border-t border-white/10">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" class="w-11 h-11 rounded-full object-cover border border-white/20" alt="Rohan">
+            <div>
+              <h4 class="text-sm font-bold text-white">Rohan Verma</h4>
+              <p class="text-xs text-slate-400">IIT Delhi • SDE Intern at <strong class="text-cyan-400 font-semibold">Razorpay</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="glass-panel p-7 rounded-2xl border border-white/10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-sm text-slate-200 leading-relaxed italic mb-6">
+              "Being a Campus Ambassador taught me team leadership, negotiation, and campus marketing. It gave me talking points in every MBA interview. Best decision of my college journey."
+            </p>
+          </div>
+          <div class="flex items-center gap-3.5 pt-4 border-t border-white/10">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" class="w-11 h-11 rounded-full object-cover border border-white/20" alt="Priya">
+            <div>
+              <h4 class="text-sm font-bold text-white">Priya Nair</h4>
+              <p class="text-xs text-slate-400">Christ University, Bangalore • Lead CA 2025</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 10. UPCOMING FREE MASTERCLASSES ==================== -->
+  <section id="masterclasses" class="py-24 relative" aria-label="Upcoming Live Masterclasses">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-mono font-bold text-orange-400 tracking-widest uppercase">Open Live Sessions</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+            Free Weekly Industry <span class="text-gradient-orange">Masterclasses.</span>
+          </h2>
+          <p class="text-slate-300 mt-2 text-sm sm:text-base">
+            No fluff. 90-minute live breakdown sessions hosted by senior leaders every Saturday.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="glass-panel rounded-2xl border border-white/10 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4">
+              <span class="flex items-center gap-1.5 text-emerald-400"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Saturday, 7:00 PM IST</span>
+              <span>Free RSVP</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Cracking Product Design Interviews in 2026</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-6">
+              Live teardown of winning Figma portfolio decks, whiteboard design challenge strategies, and salary negotiation.
+            </p>
+            <div class="flex items-center gap-3 pt-3 border-t border-white/5 mb-6">
+              <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&h=80&fit=crop&crop=face" class="w-9 h-9 rounded-full object-cover" alt="Speaker">
+              <div>
+                <p class="text-xs font-bold text-white">Sameer Kapoor</p>
+                <p class="text-[11px] text-slate-400">Staff Designer @ Swiggy</p>
+              </div>
+            </div>
+          </div>
+          <button class="trigger-apply-modal w-full py-2.5 rounded-lg border border-orange-500/50 hover:bg-orange-500 text-white text-xs font-semibold transition-all" data-course-name="Masterclass: Product Design Interviews">
+            Reserve Free Seat
+          </button>
+        </div>
+
+        <div class="glass-panel rounded-2xl border border-white/10 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4">
+              <span class="flex items-center gap-1.5 text-emerald-400"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Sunday, 5:00 PM IST</span>
+              <span>Free RSVP</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Financial Modeling Teardown: Real M&A Deal</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-6">
+              Watch a live DCF valuation model built from scratch on Excel using real financial statements of a unicorn startup.
+            </p>
+            <div class="flex items-center gap-3 pt-3 border-t border-white/5 mb-6">
+              <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=80&h=80&fit=crop&crop=face" class="w-9 h-9 rounded-full object-cover" alt="Speaker">
+              <div>
+                <p class="text-xs font-bold text-white">Kavita Singhal</p>
+                <p class="text-[11px] text-slate-400">VP, Investment Banking @ Morgan Stanley alumni</p>
+              </div>
+            </div>
+          </div>
+          <button class="trigger-apply-modal w-full py-2.5 rounded-lg border border-orange-500/50 hover:bg-orange-500 text-white text-xs font-semibold transition-all" data-course-name="Masterclass: Financial Modeling Teardown">
+            Reserve Free Seat
+          </button>
+        </div>
+
+        <div class="glass-panel rounded-2xl border border-white/10 p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between text-xs font-mono text-slate-400 mb-4">
+              <span class="flex items-center gap-1.5 text-emerald-400"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Wed, 8:00 PM IST</span>
+              <span>Free RSVP</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">Build & Deploy Autonomous AI Agents</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-6">
+              Step-by-step live coding session on integrating LLMs, function calling, and full-stack web UI for college projects.
+            </p>
+            <div class="flex items-center gap-3 pt-3 border-t border-white/5 mb-6">
+              <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=80&h=80&fit=crop&crop=face" class="w-9 h-9 rounded-full object-cover" alt="Speaker">
+              <div>
+                <p class="text-xs font-bold text-white">Arnav Goel</p>
+                <p class="text-[11px] text-slate-400">AI Architect @ Google Developer Expert</p>
+              </div>
+            </div>
+          </div>
+          <button class="trigger-apply-modal w-full py-2.5 rounded-lg border border-orange-500/50 hover:bg-orange-500 text-white text-xs font-semibold transition-all" data-course-name="Masterclass: Autonomous AI Agents">
+            Reserve Free Seat
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 11. FREQUENTLY ASKED QUESTIONS (ACCORDION) ==================== -->
+  <section id="faqs" class="py-24 bg-[#0A0E17]/80 border-t border-white/5 relative" aria-label="Frequently Asked Questions">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <span class="text-xs font-mono font-bold text-orange-400 uppercase tracking-widest">Clear Answers</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-slate-300 mt-3 text-sm sm:text-base">
+          Everything college students and parents want to know about our cohorts and community.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button class="faq-button w-full px-6 py-5 text-left flex items-center justify-between text-base font-bold text-white focus:outline-none" aria-expanded="false">
+            <span>Can 1st year and 2nd year college students join the cohorts?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+            Yes! In fact, over 65% of our learners join during their 1st or 2nd year. Starting early allows you to build a standout portfolio of capstone projects, gain confidence in group discussions, and secure competitive summer internships before your final placement year.
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button class="faq-button w-full px-6 py-5 text-left flex items-center justify-between text-base font-bold text-white focus:outline-none" aria-expanded="false">
+            <span>How do the guaranteed internship and referral drives work?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+            Students who maintain 80%+ attendance and successfully submit their capstone projects become eligible for Youthinity's internal placement drives. We partner directly with 500+ corporate hiring managers, startups, and marketing agencies across India who interview our certified cohort graduates.
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button class="faq-button w-full px-6 py-5 text-left flex items-center justify-between text-base font-bold text-white focus:outline-none" aria-expanded="false">
+            <span>What are the live class timings? Will it clash with college exams?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+            All cohort live sessions are scheduled on weekday evenings (after 7:00 PM IST) or weekend afternoons. Furthermore, during peak university exam months (such as semester end exams), cohorts offer exam pauses and permanent access to all HD recordings and mentor notes.
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button class="faq-button w-full px-6 py-5 text-left flex items-center justify-between text-base font-bold text-white focus:outline-none" aria-expanded="false">
+            <span>Do I receive verified certificates upon completion?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+            Yes. Every graduate receives an official, verifiable Certificate of Apprenticeship with a unique credential ID and QR code, directly verifiable on LinkedIn and by corporate background screening partners.
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel rounded-2xl border border-white/10 overflow-hidden">
+          <button class="faq-button w-full px-6 py-5 text-left flex items-center justify-between text-base font-bold text-white focus:outline-none" aria-expanded="false">
+            <span>What is the difference between free masterclasses and flagship cohorts?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200"></i>
+          </button>
+          <div class="faq-content hidden px-6 pb-6 text-sm text-slate-300 leading-relaxed border-t border-white/5 pt-4">
+            Free masterclasses are 90-minute standalone webinars offering broad perspective on industry topics. Flagship cohorts are intensive 6-to-12 week structured programs with 1-on-1 mentorship, live assignment reviews, capstone projects, placement support, and peer pods.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 12. FINAL COMMUNITY CTA ==================== -->
+  <section id="community" class="py-24 relative overflow-hidden" aria-label="Join Community">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="glass-panel p-8 sm:p-14 rounded-3xl border border-orange-500/30 text-center relative overflow-hidden bg-gradient-to-b from-[#141B2D] to-[#0A0E17]">
+        
+        <div class="w-16 h-16 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-orange-400 flex items-center justify-center mx-auto mb-6">
+          <i data-lucide="rocket" class="w-8 h-8"></i>
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+          Ready to Accelerate Your <span class="text-gradient-orange">College Journey?</span>
+        </h2>
+
+        <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-8">
+          Join 50,000+ ambitious college students. Get instant access to our private Discord/WhatsApp community, free weekly masterclasses, and internship alerts.
+        </p>
+
+        <!-- Newsletter Community Signup Form -->
+        <form id="community-signup-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 mb-6">
+          <input type="email" placeholder="Enter your college or personal email" required class="flex-grow px-5 py-3.5 rounded-xl bg-[#080B11] border border-white/15 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-orange-500">
+          <button type="submit" class="px-7 py-3.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm transition-all whitespace-nowrap shadow-lg shadow-orange-500/25">
+            Get Invite Link
+          </button>
+        </form>
+
+        <p class="text-xs text-slate-400 font-mono">
+          🔒 100% Free • No Spam • Over 5,280 students joined this month
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 13. FOOTER ==================== -->
+  <footer class="bg-[#05070B] border-t border-white/10 pt-16 pb-12 text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="col-span-2">
+          <a href="#" class="flex items-center gap-2 mb-4">
+            <span class="text-lg font-bold text-white">Youthinity<span class="text-orange-500">.</span></span>
+          </a>
+          <p class="text-slate-400 text-xs leading-relaxed max-w-sm mb-4">
+            India's largest community-led youth ecosystem, equipping students with practical career skills, high-impact mentorship, and real placement opportunities.
+          </p>
+          <p class="text-slate-400 text-xs font-mono">
+            Headquartered in New Delhi, India • Serving 350+ Colleges Nationwide
+          </p>
+        </div>
+
+        <!-- Links 1 -->
+        <div>
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">Cohort Domains</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#cohorts" class="hover:text-white transition-colors">Tech & AI Systems</a></li>
+            <li><a href="#cohorts" class="hover:text-white transition-colors">UI/UX Product Design</a></li>
+            <li><a href="#cohorts" class="hover:text-white transition-colors">Financial Modeling & IB</a></li>
+            <li><a href="#cohorts" class="hover:text-white transition-colors">Growth & Performance Ads</a></li>
+            <li><a href="#cohorts" class="hover:text-white transition-colors">Executive Public Speaking</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 2 -->
+        <div>
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">Ecosystem</h4>
+          <ul class="space-y-2.5">
+            <li><a href="#pppc-framework" class="hover:text-white transition-colors">PPPC Strategy</a></li>
+            <li><a href="#ambassadors" class="hover:text-white transition-colors">Campus Ambassador 2026</a></li>
+            <li><a href="#calculator" class="hover:text-white transition-colors">Career ROI Calculator</a></li>
+            <li><a href="#masterclasses" class="hover:text-white transition-colors">Free Masterclasses</a></li>
+            <li><a href="#testimonials" class="hover:text-white transition-colors">Wall of Proof</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 3 -->
+        <div>
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4">Colleges</h4>
+          <ul class="space-y-2.5">
+            <li><span class="text-slate-400">Delhi University (DU)</span></li>
+            <li><span class="text-slate-400">IITs & NITs</span></li>
+            <li><span class="text-slate-400">NMIMS & Christ University</span></li>
+            <li><span class="text-slate-400">SRCC & Hansraj</span></li>
+            <li><span class="text-slate-400">St. Xavier's & Loyola</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-slate-400 font-mono text-[11px]">
+          &copy; 2026 Youthinity Technologies Private Limited. All rights reserved.
+        </p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-white transition-colors">Honor Code</a>
+          <a href="#" class="hover:text-white transition-colors">Contact Mentors</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== 14. INTERACTIVE STUDENT APPLICATION MODAL ==================== -->
+  <div id="apply-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-lg rounded-3xl border border-white/15 p-6 sm:p-8 relative shadow-2xl bg-[#0D121D]">
+      
+      <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
+        <div>
+          <span class="text-xs font-mono text-orange-400 font-bold uppercase">Fast Track Application</span>
+          <h3 class="text-xl font-bold text-white">Join Youthinity Fellowship</h3>
+        </div>
+        <button id="modal-close" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-white/10 focus:outline-none">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <form id="apply-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-mono text-slate-300 mb-1.5">Applying For</label>
+          <input type="text" id="modal-course-input" readonly class="w-full bg-[#080B11] border border-white/10 rounded-xl px-4 py-2.5 text-sm font-semibold text-orange-400 focus:outline-none">
+        </div>
+
+        <div>
+          <label for="student-name" class="block text-xs font-mono text-slate-300 mb-1.5">Full Name *</label>
+          <input type="text" id="student-name" required placeholder="e.g. Aarav Mehta" class="w-full bg-[#080B11] border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-orange-500">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="student-email" class="block text-xs font-mono text-slate-300 mb-1.5">Email Address *</label>
+            <input type="email" id="student-email" required placeholder="aarav@college.edu" class="w-full bg-[#080B11] border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-orange-500">
+          </div>
+          <div>
+            <label for="student-phone" class="block text-xs font-mono text-slate-300 mb-1.5">WhatsApp Number *</label>
+            <input type="tel" id="student-phone" required placeholder="+91 98765 43210" class="w-full bg-[#080B11] border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-orange-500">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="student-college" class="block text-xs font-mono text-slate-300 mb-1.5">College / University *</label>
+            <input type="text" id="student-college" required placeholder="e.g. Delhi University / IIT" class="w-full bg-[#080B11] border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-orange-500">
+          </div>
+          <div>
+            <label for="student-year" class="block text-xs font-mono text-slate-300 mb-1.5">Current College Year</label>
+            <select id="student-year" class="w-full bg-[#080B11] border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-orange-500">
+              <option value="1">1st Year</option>
+              <option value="2">2nd Year</option>
+              <option value="3">3rd Year</option>
+              <option value="4">4th Year / Graduate</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold text-sm transition-all shadow-lg shadow-orange-500/25">
+            Submit Application & Connect on WhatsApp
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ==================== 15. FLOATING TOAST NOTIFICATION ==================== -->
+  <div id="toast" class="fixed bottom-6 right-6 max-w-md bg-[#0F1420] border border-emerald-500/40 text-emerald-300 px-5 py-4 rounded-2xl shadow-2xl text-xs sm:text-sm font-medium opacity-0 translate-y-4 pointer-events-none transition-all duration-300 z-50 flex items-center gap-3">
+    <!-- Message injected via app.js -->
+  </div>
+
+  <!-- Interactive Scripts -->
+  <script src="hero-scene.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
